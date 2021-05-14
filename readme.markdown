@@ -22,4 +22,4 @@ Simple TCP & UDP examples are in the `examples/` directory
 
 ## Notes
 
-Some parts of these bindings are not fully functional. There's a Todo at the start of `winsock2.odin` describing what you may run into while using these. PRs are welcomed.
+Some parts of these bindings are not fully functional. There's a Todo at the start of `winsock2.odin` describing what you may run into while using these. Another thing to watch out for is potential collisions with `sys/windows/ws2_32.odin`. Steps have been taken to make this less likely. PRs are welcome.

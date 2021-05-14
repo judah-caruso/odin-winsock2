@@ -15,10 +15,6 @@ foreign import winsock2 "system:Ws2_32.lib"
 */
 
 // === Winsock ===
-
-// === Private utilities, types, macros, etc. ===
-
-
 // Converted macros
 // _IO      :: proc(x: i32, y: i32)            -> i32 { return (IOC_VOID | (x << 8) | y);                                                   }
 // _IOR     :: proc(x: i32, y: i32, t: typeid) -> i32 { return (IOC_OUT  | ((cast(c.long)size_of(t) & IOCPARM_MASK) << 16 | (x << 8) | y)); }
@@ -450,21 +446,6 @@ TRANSMIT_FILE_BUFFERS :: struct {
     Tail       : rawptr,
     TailLength : DWORD,
 }
-
-// @Note(Judah): This is already defined in sys/windows
-// OVERLAPPED :: struct {
-//     Internal     : *u_long;
-//     InternalHigh : *u_long;
-//     union {
-//         struct {
-//             Offset     : DWORD;
-//             OffsetHigh : DWORD;
-//         };
-//     };
-//     Pointer : *void;
-//     hEvent  : HANDLE;
-// };
-
 
 // WSA specific functions
 @(default_calling_convention = "stdcall")
